@@ -2,6 +2,7 @@ package api
 
 import (
 	"encoding/json"
+	"net/url"
 	"net/http"
 	"net/http/httptest"
 	"os"
@@ -219,6 +220,90 @@ func TestReadPost(t *testing.T) {
 	}
 	require.NoError(t, json.Unmarshal(resp, &result))
 	assert.Equal(t, "123", result.Data.ID)
+}
+
+func assertCSVContains(t *testing.T, csv string, values ...string) {
+	t.Helper()
+	padded := "," + csv + ","
+	for _, v := range values {
+		assert.Contains(t, padded, ","+v+",")
+	}
+}
+
+func TestTweetReadEndpointsIncludeRequiredTweetFieldsAndMediaExpansions(t *testing.T) {
+	type callSpec struct {
+		name string
+		call func(client Client, opts RequestOptions) (json.RawMessage, error)
+	}
+
+	tests := []callSpec{
+		{
+			name: "ReadPost",
+			call: func(client Client, opts RequestOptions) (json.RawMessage, error) {
+				return ReadPost(client, "123", opts)
+			},
+		},
+		{
+			name: "SearchPosts",
+			call: func(client Client, opts RequestOptions) (json.RawMessage, error) {
+				return SearchPosts(client, "golang", 10, opts)
+			},
+		},
+		{
+			name: "GetUserPosts",
+			call: func(client Client, opts RequestOptions) (json.RawMessage, error) {
+				return GetUserPosts(client, "42", 10, opts)
+			},
+		},
+		{
+			name: "GetTimeline",
+			call: func(client Client, opts RequestOptions) (json.RawMessage, error) {
+				return GetTimeline(client, "42", 10, opts)
+			},
+		},
+		{
+			name: "GetMentions",
+			call: func(client Client, opts RequestOptions) (json.RawMessage, error) {
+				return GetMentions(client, "42", 10, opts)
+			},
+		},
+		{
+			name: "GetBookmarks",
+			call: func(client Client, opts RequestOptions) (json.RawMessage, error) {
+				return GetBookmarks(client, "42", 10, opts)
+			},
+		},
+		{
+			name: "GetLikedPosts",
+			call: func(client Client, opts RequestOptions) (json.RawMessage, error) {
+				return GetLikedPosts(client, "42", 10, opts)
+			},
+		},
+	}
+
+	for _, tt := range tests {
+		t.Run(tt.name, func(t *testing.T) {
+			var capturedQuery url.Values
+
+			server := httptest.NewServer(http.HandlerFunc(func(w http.ResponseWriter, r *http.Request) {
+				capturedQuery = r.URL.Query()
+				w.Header().Set("Content-Type", "application/json")
+				w.WriteHeader(http.StatusOK)
+				w.Write([]byte(`{"data":{}}`))
+			}))
+			defer server.Close()
+
+			client := shortcutClient(t, server)
+			_, err := tt.call(client, baseTestOpts())
+			require.NoError(t, err)
+
+			tweetFields := capturedQuery.Get("tweet.fields")
+			expansions := capturedQuery.Get("expansions")
+
+			assertCSVContains(t, tweetFields, "text", "note_tweet", "article", "attachments")
+			assertCSVContains(t, expansions, "attachments.media_keys")
+		})
+	}
 }
 
 // ---- SearchPosts ----
