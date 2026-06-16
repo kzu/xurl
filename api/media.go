@@ -9,7 +9,7 @@ import (
 	"strconv"
 	"strings"
 	"time"
-	"github.com/xdevplatform/xurl/utils"
+	"github.com/kzu/xurl/utils"
 )
 
 const (

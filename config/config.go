@@ -4,7 +4,7 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/xdevplatform/xurl/store"
+	"github.com/kzu/xurl/store"
 )
 
 const DefaultRedirectURI = "http://localhost:8080/callback"

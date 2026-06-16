@@ -4,9 +4,9 @@ import (
 	"fmt"
 	"os"
 
-	"github.com/xdevplatform/xurl/auth"
-	"github.com/xdevplatform/xurl/cli"
-	"github.com/xdevplatform/xurl/config"
+	"github.com/kzu/xurl/auth"
+	"github.com/kzu/xurl/cli"
+	"github.com/kzu/xurl/config"
 )
 
 func main() {

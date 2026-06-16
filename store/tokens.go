@@ -7,7 +7,7 @@ import (
 	"path/filepath"
 	"sort"
 
-	"github.com/xdevplatform/xurl/errors"
+	"github.com/kzu/xurl/errors"
 
 	"gopkg.in/yaml.v3"
 )

@@ -24,9 +24,9 @@ builds:
       - darwin
     ldflags:
       - -s -w
-      - -X github.com/xdevplatform/xurl/version.Version={{.Version}}
-      - -X github.com/xdevplatform/xurl/version.Commit={{.Commit}}
-      - -X github.com/xdevplatform/xurl/version.BuildDate={{.Date}}
+      - -X github.com/kzu/xurl/version.Version={{.Version}}
+      - -X github.com/kzu/xurl/version.Commit={{.Commit}}
+      - -X github.com/kzu/xurl/version.BuildDate={{.Date}}
 
 archives:
   - formats: [tar.gz]
@@ -56,7 +56,7 @@ homebrew_casks:
       owner: xdevplatform
       name: homebrew-tap
       token: "{{ .Env.HOMEBREW_TAP_GITHUB_TOKEN }}"
-    homepage: "https://github.com/xdevplatform/xurl"
+    homepage: "https://github.com/kzu/xurl"
     description: "Auth-enabled curl-like CLI for the X API"
     hooks:
       post:

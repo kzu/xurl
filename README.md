@@ -33,7 +33,7 @@ Installs to `~/.local/bin`. If it's not in your PATH, the script will tell you w
 
 ### Go
 ```bash
-go install github.com/xdevplatform/xurl@latest
+go install github.com/kzu/xurl@latest
 ```
 
 

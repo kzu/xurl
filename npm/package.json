@@ -5,9 +5,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "https://github.com/xdevplatform/xurl"
+    "url": "https://github.com/kzu/xurl"
   },
-  "homepage": "https://github.com/xdevplatform/xurl",
+  "homepage": "https://github.com/kzu/xurl",
   "keywords": ["x", "twitter", "api", "cli", "curl", "oauth"],
   "bin": {
     "xurl": "cli.js"

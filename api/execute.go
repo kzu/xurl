@@ -3,7 +3,7 @@ package api
 import (
 	"encoding/json"
 	"fmt"
-	"github.com/xdevplatform/xurl/utils"
+	"github.com/kzu/xurl/utils"
 )
 
 // ExecuteRequest handles the execution of a regular API request

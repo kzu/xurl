@@ -20,9 +20,9 @@ import (
 	"strings"
 	"time"
 
-	"github.com/xdevplatform/xurl/config"
-	xurlErrors "github.com/xdevplatform/xurl/errors"
-	"github.com/xdevplatform/xurl/store"
+	"github.com/kzu/xurl/config"
+	xurlErrors "github.com/kzu/xurl/errors"
+	"github.com/kzu/xurl/store"
 
 	"runtime"
 
