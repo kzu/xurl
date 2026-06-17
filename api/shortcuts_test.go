@@ -299,9 +299,13 @@ func TestTweetReadEndpointsIncludeRequiredTweetFieldsAndMediaExpansions(t *testi
 
 			tweetFields := capturedQuery.Get("tweet.fields")
 			expansions := capturedQuery.Get("expansions")
+			userFields := capturedQuery.Get("user.fields")
+			mediaFields := capturedQuery.Get("media.fields")
 
-			assertCSVContains(t, tweetFields, "text", "note_tweet", "article", "attachments")
-			assertCSVContains(t, expansions, "attachments.media_keys")
+			assertCSVContains(t, tweetFields, "text", "note_tweet", "article", "attachments", "public_metrics", "author_id", "entities", "created_at")
+			assertCSVContains(t, expansions, "author_id", "article.cover_media", "article.media_entities", "attachments.media_keys")
+			assertCSVContains(t, userFields, "username", "name", "verified", "profile_image_url")
+			assertCSVContains(t, mediaFields, "url", "preview_image_url", "type", "variants")
 		})
 	}
 }
