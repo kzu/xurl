@@ -6,7 +6,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/xdevplatform/xurl/store"
+	"github.com/kzu/xurl/store"
 )
 
 func TestOAuth2NoAppCredentialWarning(t *testing.T) {

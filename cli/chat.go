@@ -21,10 +21,10 @@ import (
 	"golang.org/x/term"
 
 	"github.com/xdevplatform/chat-xdk/go/chatxdk"
-	"github.com/xdevplatform/xurl/api"
-	"github.com/xdevplatform/xurl/auth"
-	"github.com/xdevplatform/xurl/store"
-	"github.com/xdevplatform/xurl/utils"
+	"github.com/kzu/xurl/api"
+	"github.com/kzu/xurl/auth"
+	"github.com/kzu/xurl/store"
+	"github.com/kzu/xurl/utils"
 )
 
 // chatSupported reports whether this build includes the XChat client.

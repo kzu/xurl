@@ -5,7 +5,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/xdevplatform/xurl/version"
+	"github.com/kzu/xurl/version"
 )
 
 // CreateVersionCommand creates the version command
@@ -14,7 +14,7 @@ func CreateVersionCommand() *cobra.Command {
 		Use:   "version",
 		Short: "Show xurl version information",
 		Run: func(cmd *cobra.Command, args []string) {
-			fmt.Printf("xurl %s\n", version.Version)
+			fmt.Printf("xurl %s by @kzu\n", version.Version)
 		},
 	}
 

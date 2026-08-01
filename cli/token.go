@@ -6,7 +6,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/xdevplatform/xurl/auth"
+	"github.com/kzu/xurl/auth"
 )
 
 // CreateTokenCommand creates the `token` command, which prints a valid OAuth2

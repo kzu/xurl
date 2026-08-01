@@ -9,7 +9,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/xdevplatform/xurl/api"
+	"github.com/kzu/xurl/api"
 )
 
 type fakeClient struct {

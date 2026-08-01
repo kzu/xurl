@@ -8,7 +8,7 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/xdevplatform/xurl/auth"
+	"github.com/kzu/xurl/auth"
 )
 
 // chatSupported reports whether this build includes the XChat client.
@@ -23,7 +23,7 @@ func CreateChatCommand(a *auth.Auth) *cobra.Command {
 		Short: "Send and read end-to-end encrypted XChat messages (unavailable in this build)",
 		Run: func(cmd *cobra.Command, args []string) {
 			fmt.Fprintln(os.Stderr, "xurl chat is not available in this build: the XChat crypto library supports macOS (amd64/arm64) and Linux (amd64) only.")
-			fmt.Fprintln(os.Stderr, "Release binaries for those platforms include chat; on them a source build also needs cgo: CGO_ENABLED=1 go install github.com/xdevplatform/xurl@latest")
+			fmt.Fprintln(os.Stderr, "Release binaries for those platforms include chat; on them a source build also needs cgo: CGO_ENABLED=1 go install github.com/kzu/xurl@latest")
 			os.Exit(1)
 		},
 	}
