@@ -12,7 +12,7 @@ import (
 	"github.com/stretchr/testify/require"
 
 	"github.com/xdevplatform/chat-xdk/go/chatxdk"
-	"github.com/xdevplatform/xurl/api"
+	"github.com/kzu/xurl/api"
 )
 
 // stubChatClient serves canned responses for the endpoints resolveConversation

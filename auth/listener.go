@@ -9,7 +9,7 @@ import (
 	"sync"
 	"time"
 
-	xurlErrors "github.com/xdevplatform/xurl/errors"
+	xurlErrors "github.com/kzu/xurl/errors"
 )
 
 func StartListener(addresses []string, callbackPath string, callback func(code, state string) error, ready chan<- struct{}) error {

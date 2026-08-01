@@ -18,9 +18,9 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	"github.com/xdevplatform/xurl/auth"
-	"github.com/xdevplatform/xurl/config"
-	"github.com/xdevplatform/xurl/store"
+	"github.com/kzu/xurl/auth"
+	"github.com/kzu/xurl/config"
+	"github.com/kzu/xurl/store"
 )
 
 // mcpTestAuth returns an *auth.Auth backed by a temp store holding a single

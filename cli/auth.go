@@ -10,9 +10,9 @@ import (
 	"github.com/charmbracelet/lipgloss"
 	"github.com/spf13/cobra"
 
-	"github.com/xdevplatform/xurl/auth"
-	"github.com/xdevplatform/xurl/config"
-	"github.com/xdevplatform/xurl/store"
+	"github.com/kzu/xurl/auth"
+	"github.com/kzu/xurl/config"
+	"github.com/kzu/xurl/store"
 )
 
 // Headless-login styles (kept minimal; plain terminal output, no alt screen, so

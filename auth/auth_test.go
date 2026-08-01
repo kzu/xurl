@@ -13,8 +13,8 @@ import (
 	"github.com/stretchr/testify/require"
 	"golang.org/x/oauth2"
 
-	"github.com/xdevplatform/xurl/config"
-	"github.com/xdevplatform/xurl/store"
+	"github.com/kzu/xurl/config"
+	"github.com/kzu/xurl/store"
 )
 
 // Helper function to create a temporary token store for testing

@@ -34,7 +34,7 @@ Installs to `~/.local/bin`. If it's not in your PATH, the script will tell you w
 
 ### Go
 ```bash
-go install github.com/xdevplatform/xurl@latest
+go install github.com/kzu/xurl@latest
 ```
 
 
@@ -429,7 +429,7 @@ Notes:
   binaries (Homebrew, npm, GitHub releases) include it on those platforms. On other
   platforms (Windows, Linux arm64/i386) `xurl chat` prints a stub explaining it is
   unavailable. Source builds on supported platforms need cgo:
-  `CGO_ENABLED=1 go install github.com/xdevplatform/xurl@latest`.
+  `CGO_ENABLED=1 go install github.com/kzu/xurl@latest`.
 
 ## Token Storage
 

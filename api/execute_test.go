@@ -11,7 +11,7 @@ import (
 	"github.com/stretchr/testify/assert"
 	"github.com/stretchr/testify/require"
 
-	xurlErrors "github.com/xdevplatform/xurl/errors"
+	xurlErrors "github.com/kzu/xurl/errors"
 )
 
 // redirectColor sends colorized output (used by FormatAndPrintResponse) to w and

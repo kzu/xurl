@@ -17,8 +17,8 @@ import (
 
 	"github.com/spf13/cobra"
 
-	"github.com/xdevplatform/xurl/auth"
-	"github.com/xdevplatform/xurl/version"
+	"github.com/kzu/xurl/auth"
+	"github.com/kzu/xurl/version"
 )
 
 // defaultMCPURL is the hosted X API MCP endpoint used when no URL is given.
